@@ -1,0 +1,31 @@
+{
+  "name": "floodgate-nextjs",
+  "version": "0.1.0",
+  "description": "Next.js middleware and route handler helpers for FloodGate rate limiter",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "next": ">=15.0.0",
+    "floodgate-rl": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "floodgate-rl": "*",
+    "next": "^15.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}

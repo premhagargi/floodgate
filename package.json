@@ -1,0 +1,19 @@
+{
+  "name": "floodgate",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "dev:core": "npm run build:watch -w floodgate-rl",
+    "dev:dashboard": "npm run dev -w floodgate-dashboard"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
