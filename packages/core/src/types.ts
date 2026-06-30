@@ -34,6 +34,8 @@ export interface RateLimiterOptions {
   algorithm?: Algorithm
   fallback?: 'memory'
   redisClient?: RedisClient
+  /** Prepended to every key: `${keyPrefix}:${key}`. Use to namespace a shared Redis instance. */
+  keyPrefix?: string
 }
 
 export type RateLimiterEvents = {

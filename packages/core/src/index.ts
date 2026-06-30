@@ -18,19 +18,27 @@ export class RateLimiter extends EventEmitter {
   private primary: Backend
   private fallback: Backend | null = null
   private algorithm: Algorithm
+  private keyPrefix: string | undefined
 
-  constructor(primary: Backend, options: { algorithm?: Algorithm; fallback?: Backend } = {}) {
+  constructor(
+    primary: Backend,
+    options: { algorithm?: Algorithm; fallback?: Backend; keyPrefix?: string } = {},
+  ) {
     super()
     this.primary = primary
     this.algorithm = options.algorithm ?? 'sliding-window-counter'
     this.fallback = options.fallback ?? null
+    this.keyPrefix = options.keyPrefix
   }
 
   async check(options: LimitOptions): Promise<LimitResult> {
+    const resolved = this.keyPrefix
+      ? { ...options, key: `${this.keyPrefix}:${options.key}` }
+      : options
     try {
-      const result = await this.primary.check(options, this.algorithm)
-      this.emit('check', options.key, result)
-      if (!result.allowed) this.emit('blocked', options.key, result)
+      const result = await this.primary.check(resolved, this.algorithm)
+      this.emit('check', resolved.key, result)
+      if (!result.allowed) this.emit('blocked', resolved.key, result)
       return result
     } catch (err) {
       const error = err instanceof Error ? err : new Error(String(err))
@@ -38,9 +46,9 @@ export class RateLimiter extends EventEmitter {
       if (this.fallback) {
         this.emit('redis:error', error)
         this.emit('redis:fallback', error)
-        const result = await this.fallback.check(options, this.algorithm)
-        this.emit('check', options.key, result)
-        if (!result.allowed) this.emit('blocked', options.key, result)
+        const result = await this.fallback.check(resolved, this.algorithm)
+        this.emit('check', resolved.key, result)
+        if (!result.allowed) this.emit('blocked', resolved.key, result)
         return result
       }
 
@@ -85,7 +93,7 @@ export function createLimiter(options: RateLimiterOptions): RateLimiter {
 
   if (options.backend === 'memory') {
     const backend = new MemoryBackend(new EventEmitter())
-    return new RateLimiter(backend, { algorithm: options.algorithm })
+    return new RateLimiter(backend, { algorithm: options.algorithm, keyPrefix: options.keyPrefix })
   }
 
   if (options.backend === 'redis') {
@@ -98,7 +106,7 @@ export function createLimiter(options: RateLimiterOptions): RateLimiter {
     const backend = new RedisBackend(options.redisClient)
     // Load scripts eagerly for performance; per-request NOSCRIPT retry is the safety net.
     void backend.loadScripts()
-    return new RateLimiter(backend, { algorithm: options.algorithm, fallback: fallbackBackend })
+    return new RateLimiter(backend, { algorithm: options.algorithm, fallback: fallbackBackend, keyPrefix: options.keyPrefix })
   }
 
   throw new Error(`Unknown backend: ${String(options.backend)}`)

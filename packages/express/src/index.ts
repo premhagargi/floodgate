@@ -1,19 +1,24 @@
 import type { Request, Response, NextFunction } from 'express'
-import type { RateLimiter } from 'floodgate-rl'
+import type { LimitResult, RateLimiter } from 'floodgate-rl'
 
 export interface ExpressRateLimitOptions {
   limiter: RateLimiter
   limit: number
   windowMs: number
   key?: (req: Request) => string
+  /** Return true to skip rate limiting for this request (e.g. health checks, internal IPs). */
+  skip?: (req: Request) => boolean | Promise<boolean>
   onBlocked?: (req: Request, res: Response, retryAfterMs: number) => void
+  onAllowed?: (req: Request, res: Response, result: LimitResult) => void
 }
 
 export function rateLimit(options: ExpressRateLimitOptions) {
-  const { limiter, limit, windowMs, key = defaultKey, onBlocked = defaultBlocked } = options
+  const { limiter, limit, windowMs, key = defaultKey, skip, onBlocked = defaultBlocked, onAllowed } = options
 
   return async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
+      if (skip && (await skip(req))) return next()
+
       const result = await limiter.check({ key: key(req), limit, windowMs })
 
       res.setHeader('RateLimit-Limit', limit)
@@ -27,6 +32,7 @@ export function rateLimit(options: ExpressRateLimitOptions) {
         return
       }
 
+      onAllowed?.(req, res, result)
       next()
     } catch (err) {
       next(err)

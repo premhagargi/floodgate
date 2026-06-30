@@ -2,7 +2,7 @@
 
 Production-grade distributed rate limiter for Node.js — atomic Lua scripts, Redis Cluster-safe, three algorithms, Express and Next.js 15 adapters, real-time dashboard.
 
-[![CI](https://github.com/mohammedaamir5584/floodgate/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammedaamir5584/floodgate/actions)
+[![CI](https://github.com/premhagargi/floodgate/actions/workflows/ci.yml/badge.svg)](https://github.com/premhagargi/floodgate/actions)
 [![npm](https://img.shields.io/npm/v/floodgate-rl)](https://www.npmjs.com/package/floodgate-rl)
 
 ---

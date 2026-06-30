@@ -7,6 +7,8 @@ export interface NextRateLimitOptions {
   limit: number
   windowMs: number
   key?: (req: NextRequest) => string
+  /** Return true to skip rate limiting for this request (e.g. health checks, internal IPs). */
+  skip?: (req: NextRequest) => boolean | Promise<boolean>
 }
 
 // Wraps a Next.js App Router route handler with rate limiting.
@@ -15,9 +17,11 @@ export function withRateLimit(
   handler: (req: NextRequest, ctx?: unknown) => Promise<Response> | Response,
   options: NextRateLimitOptions,
 ) {
-  const { limiter, limit, windowMs, key = defaultKey } = options
+  const { limiter, limit, windowMs, key = defaultKey, skip } = options
 
   return async (req: NextRequest, ctx?: unknown): Promise<Response> => {
+    if (skip && (await skip(req))) return handler(req, ctx)
+
     const result = await limiter.check({ key: key(req), limit, windowMs })
 
     const headers: Record<string, string> = {
@@ -41,9 +45,11 @@ export function withRateLimit(
 
 // For use in Next.js middleware.ts (edge runtime — use only MemoryBackend here).
 export function createMiddlewareHandler(options: NextRateLimitOptions) {
-  const { limiter, limit, windowMs, key = defaultKey } = options
+  const { limiter, limit, windowMs, key = defaultKey, skip } = options
 
   return async (req: NextRequest): Promise<NextResponse> => {
+    if (skip && (await skip(req))) return NextResponse.next()
+
     const result = await limiter.check({ key: key(req), limit, windowMs })
     const res = NextResponse.next()
 

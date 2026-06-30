@@ -44,20 +44,11 @@ export const metadata: Metadata = {
     siteName: 'FloodGate',
     title: TITLE,
     description: DESCRIPTION,
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'FloodGate — Distributed Rate Limiting',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
-    images: ['/og-image.png'],
     creator: '@premhagargi',
   },
   alternates: { canonical: SITE_URL },
