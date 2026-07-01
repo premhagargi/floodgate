@@ -1,5 +1,5 @@
 [build]
-  publish = "apps/marketing"
+  publish = "apps/marketing/.next"
   command = "npm --workspace floodgate-marketing run build"
 
 [[plugins]]
