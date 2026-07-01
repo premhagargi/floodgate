@@ -60,7 +60,7 @@ export function Architecture() {
               {i < steps.length - 1 && (
                 <div className="hidden sm:flex items-center px-2">
                   <svg width="28" height="16" viewBox="0 0 28 16" fill="none" aria-hidden>
-                    <path d="M1 8h22M23 8l-6-6M23 8l-6 6" stroke="#2E3A58" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M1 8h22M23 8l-6-6M23 8l-6 6" stroke="#94A3B8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               )}
@@ -95,7 +95,7 @@ export function Architecture() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-6 rounded-lg border border-wire-bright bg-canvas-base p-5 font-mono text-xs text-text-secondary leading-relaxed"
+          className="mt-6 rounded-lg border border-editor-border bg-editor-base p-5 font-mono text-xs text-slate-300 leading-relaxed"
         >
           <span className="code-comment">{'// EVALSHA with automatic NOSCRIPT retry\n'}</span>
           <span className="code-keyword">try </span>

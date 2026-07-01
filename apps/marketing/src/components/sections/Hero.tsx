@@ -116,7 +116,7 @@ export function Hero() {
         aria-hidden
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
         style={{
-          background: 'linear-gradient(to top, #04050A, transparent)',
+          background: 'linear-gradient(to top, #FFFFFF, transparent)',
         }}
       />
     </section>

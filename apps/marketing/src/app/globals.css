@@ -14,24 +14,24 @@ html {
 }
 
 body {
-  background-color: #04050A;
-  color: #F0F4FF;
+  background-color: #FFFFFF;
+  color: #0F172A;
   overflow-x: hidden;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #080B12; }
-::-webkit-scrollbar-thumb { background: #252D45; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #2E3A58; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
 
 /* Selection */
-::selection { background: rgba(14, 165, 233, 0.25); color: #F0F4FF; }
+::selection { background: rgba(2, 132, 199, 0.15); color: #0F172A; }
 
 /* Gradient text utility */
 @layer utilities {
   .text-gradient-brand {
-    background: linear-gradient(135deg, #F0F4FF 0%, #94A3B8 100%);
+    background: linear-gradient(135deg, #0F172A 0%, #475569 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -60,7 +60,7 @@ body {
 
   .border-gradient {
     border: 1px solid transparent;
-    background: linear-gradient(#0B0F1A, #0B0F1A) padding-box,
+    background: linear-gradient(#FFFFFF, #FFFFFF) padding-box,
                 linear-gradient(135deg, rgba(14,165,233,0.4), rgba(139,92,246,0.4)) border-box;
   }
 

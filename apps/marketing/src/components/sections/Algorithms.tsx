@@ -108,7 +108,7 @@ export function Algorithms() {
               <div className="flex flex-col gap-2">
                 <span
                   className={`text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full w-fit bg-gradient-to-r ${alg.accent} bg-opacity-10 text-text-DEFAULT font-medium`}
-                  style={{ background: 'rgba(255,255,255,0.05)' }}
+                  style={{ background: 'rgba(2,6,23,0.05)' }}
                 >
                   {alg.badge}
                 </span>
@@ -138,7 +138,7 @@ export function Algorithms() {
               </div>
 
               {/* Code snippet */}
-              <pre className="rounded-lg bg-canvas-base border border-wire p-4 text-xs font-mono overflow-x-auto text-text-secondary leading-relaxed">
+              <pre className="rounded-lg bg-editor-base border border-editor-border p-4 text-xs font-mono overflow-x-auto text-slate-300 leading-relaxed">
                 {alg.code}
               </pre>
             </motion.div>

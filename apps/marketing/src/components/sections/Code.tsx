@@ -125,31 +125,31 @@ export function Code() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="rounded-2xl border border-wire overflow-hidden shadow-2xl"
+          className="rounded-2xl border border-editor-border overflow-hidden shadow-2xl"
         >
           {/* Tab bar */}
-          <div className="flex items-center border-b border-wire bg-canvas-card px-4 pt-3 pb-0 gap-1 overflow-x-auto">
+          <div className="flex items-center border-b border-editor-border bg-editor-card px-4 pt-3 pb-0 gap-1 overflow-x-auto">
             {TABS.map((t) => (
               <button
                 key={t.id}
                 onClick={() => setActive(t.id)}
                 className={`px-4 py-2.5 text-sm font-mono rounded-t-md border border-transparent border-b-0 transition-all duration-150 whitespace-nowrap ${
                   active === t.id
-                    ? 'bg-canvas-base text-text-DEFAULT border-wire'
-                    : 'text-text-muted hover:text-text-secondary'
+                    ? 'bg-editor-base text-white border-editor-border'
+                    : 'text-slate-500 hover:text-slate-300'
                 }`}
               >
                 {t.label}
               </button>
             ))}
             {/* Window file path */}
-            <div className="ml-auto pr-2 pb-2.5 text-[11px] font-mono text-text-muted hidden sm:block">
+            <div className="ml-auto pr-2 pb-2.5 text-[11px] font-mono text-slate-500 hidden sm:block">
               {tab.file}
             </div>
           </div>
 
           {/* Code */}
-          <div className="bg-canvas-base p-6 overflow-x-auto">
+          <div className="bg-editor-base p-6 overflow-x-auto">
             <AnimatePresence mode="wait">
               <motion.pre
                 key={active}
