@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { CheckIcon } from '@/components/ui/Icons'
 
 const algorithms = [
   {
@@ -125,7 +126,7 @@ export function Algorithms() {
               <ul className="flex flex-col gap-1.5">
                 {alg.details.map((d) => (
                   <li key={d} className="flex items-start gap-2 text-xs text-text-secondary">
-                    <span className="text-brand-sky mt-0.5 shrink-0">✓</span>
+                    <CheckIcon className="w-3.5 h-3.5 text-brand-sky mt-0.5 shrink-0" />
                     {d}
                   </li>
                 ))}

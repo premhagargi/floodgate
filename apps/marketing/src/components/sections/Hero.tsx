@@ -3,13 +3,14 @@
 import { motion } from 'framer-motion'
 import { GradientOrb } from '@/components/ui/GradientOrb'
 import { NpmCommand } from '@/components/ui/NpmCommand'
+import { BoltIcon, ClusterIcon, ShieldIcon, CodeIcon, GridIcon } from '@/components/ui/Icons'
 
 const badges = [
-  { label: '3 algorithms', icon: '⚡' },
-  { label: 'Redis Cluster', icon: '◈' },
-  { label: 'Atomic Lua', icon: '◎' },
-  { label: 'TypeScript', icon: '◷' },
-  { label: 'Express + Next.js', icon: '⬡' },
+  { label: '3 algorithms', Icon: BoltIcon },
+  { label: 'Redis Cluster', Icon: ClusterIcon },
+  { label: 'Atomic Lua', Icon: ShieldIcon },
+  { label: 'TypeScript', Icon: CodeIcon },
+  { label: 'Express + Next.js', Icon: GridIcon },
 ]
 
 const ease = [0.25, 0.1, 0.25, 1] as const
@@ -104,7 +105,7 @@ export function Hero() {
               key={b.label}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-wire bg-canvas-surface text-text-secondary text-xs font-mono"
             >
-              <span className="text-text-muted">{b.icon}</span>
+              <b.Icon className="w-3.5 h-3.5 text-text-muted" />
               {b.label}
             </span>
           ))}

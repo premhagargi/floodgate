@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { ArrowRightIcon, GateMarkIcon, BoltIcon, CheckIcon } from '@/components/ui/Icons'
 
 const steps = [
-  { icon: '⬡', label: 'Request', sub: 'Your API receives a request', color: 'text-text-secondary', border: 'border-wire' },
-  { icon: '◎', label: 'FloodGate', sub: 'Calls backend.check()', color: 'text-brand-sky', border: 'border-brand-sky/30' },
-  { icon: '⚡', label: 'Redis / Lua', sub: 'EVALSHA — atomic, one trip', color: 'text-brand-violet', border: 'border-brand-violet/30' },
-  { icon: '✓', label: 'Allow / Block', sub: 'Headers set, retryAfter optional', color: 'text-emerald-400', border: 'border-emerald-500/30' },
+  { Icon: ArrowRightIcon, label: 'Request', sub: 'Your API receives a request', color: 'text-text-secondary', border: 'border-wire' },
+  { Icon: GateMarkIcon, label: 'FloodGate', sub: 'Calls backend.check()', color: 'text-brand-sky', border: 'border-brand-sky/30' },
+  { Icon: BoltIcon, label: 'Redis / Lua', sub: 'EVALSHA — atomic, one trip', color: 'text-brand-violet', border: 'border-brand-violet/30' },
+  { Icon: CheckIcon, label: 'Allow / Block', sub: 'Headers set, retryAfter optional', color: 'text-emerald-400', border: 'border-emerald-500/30' },
 ]
 
 const internals = [
@@ -53,7 +54,7 @@ export function Architecture() {
               <div
                 className={`flex flex-col items-center gap-2 px-6 py-5 rounded-xl border ${s.border} bg-canvas-card min-w-[140px]`}
               >
-                <span className={`text-2xl ${s.color}`}>{s.icon}</span>
+                <s.Icon className={`w-6 h-6 ${s.color}`} />
                 <span className={`font-semibold text-sm ${s.color}`}>{s.label}</span>
                 <span className="text-[11px] text-text-muted text-center leading-tight">{s.sub}</span>
               </div>
