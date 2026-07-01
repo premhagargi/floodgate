@@ -25,14 +25,17 @@ jobs:
       - name: Test
         run: npm run test -w floodgate-rl
 
-      - name: Typecheck
-        run: |
-          npm run typecheck -w floodgate-rl
-          npm run typecheck -w floodgate-express
-          npm run typecheck -w floodgate-nextjs
+      - name: Typecheck core
+        run: npm run typecheck -w floodgate-rl
 
       - name: Build core
         run: npm run build -w floodgate-rl
+
+      - name: Typecheck express adapter
+        run: npm run typecheck -w floodgate-express
+
+      - name: Typecheck nextjs adapter
+        run: npm run typecheck -w floodgate-nextjs
 
       - name: Build express adapter
         run: npm run build -w floodgate-express
