@@ -24,7 +24,7 @@ export function Nav() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/floodgate-logo.png" alt="FloodGate" className="h-[72px] w-auto" />
+          <img src="/floodgate-logo.png" alt="FloodGate" className="h-9 w-auto" />
           <span className="hidden sm:block text-[10px] font-mono px-1.5 py-0.5 rounded border border-wire text-text-muted">
             v0.1.1
           </span>
@@ -35,7 +35,7 @@ export function Nav() {
           <a
             href="https://github.com/premhagargi/floodgate"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md text-sm text-text-secondary hover:text-text-DEFAULT hover:bg-canvas-card transition-all duration-150"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -46,7 +46,7 @@ export function Nav() {
           <a
             href="https://npmjs.com/package/floodgate-rl"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium bg-brand-sky text-white hover:bg-sky-500 transition-colors"
           >
             <NpmIcon className="w-4 h-4" />

@@ -14,7 +14,7 @@ export function Footer() {
           <a
             href="https://github.com/premhagargi/floodgate"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hover:text-text-DEFAULT transition-colors"
           >
             GitHub
@@ -22,7 +22,7 @@ export function Footer() {
           <a
             href="https://npmjs.com/package/floodgate-rl"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hover:text-text-DEFAULT transition-colors"
           >
             npm
@@ -30,7 +30,7 @@ export function Footer() {
           <a
             href="https://github.com/premhagargi/floodgate#readme"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hover:text-text-DEFAULT transition-colors"
           >
             Docs

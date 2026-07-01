@@ -83,7 +83,7 @@ export function Hero() {
           <a
             href="https://github.com/premhagargi/floodgate"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm sm:gap-2 sm:px-6 sm:py-4 sm:text-base rounded-lg border border-wire bg-canvas-card hover:bg-canvas-elevated text-text-DEFAULT font-medium transition-all duration-200"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="w-4 h-4 sm:w-5 sm:h-5 shrink-0">

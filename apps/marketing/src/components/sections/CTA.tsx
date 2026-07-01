@@ -38,7 +38,7 @@ export function CTA() {
             <a
               href="https://github.com/premhagargi/floodgate"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium text-text-DEFAULT border border-wire hover:bg-canvas-elevated transition-colors"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -49,7 +49,7 @@ export function CTA() {
             <a
               href="https://npmjs.com/package/floodgate-rl"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium bg-brand-sky text-white hover:bg-sky-500 transition-colors"
             >
               <NpmIcon className="w-4 h-4" />
