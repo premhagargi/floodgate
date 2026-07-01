@@ -2,6 +2,8 @@
   "name": "floodgate-express",
   "version": "0.1.1",
   "description": "Express middleware for FloodGate rate limiter",
+  "license": "MIT",
+  "keywords": ["rate-limit", "rate-limiting", "express", "middleware", "redis", "floodgate", "throttle", "api"],
   "homepage": "https://github.com/premhagargi/floodgate#readme",
   "repository": { "type": "git", "url": "https://github.com/premhagargi/floodgate.git" },
   "engines": { "node": ">=20" },

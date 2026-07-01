@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "npm run build -w floodgate-rl && npm run build -w floodgate-dashboard",
-  "installCommand": "npm install",
-  "outputDirectory": "apps/dashboard/.next"
+  "installCommand": "cd ../.. && npm install",
+  "buildCommand": "cd ../.. && npm run build -w floodgate-rl && cd apps/dashboard && npm run build",
+  "outputDirectory": ".next"
 }

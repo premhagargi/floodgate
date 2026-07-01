@@ -2,6 +2,8 @@
   "name": "floodgate-nextjs",
   "version": "0.1.1",
   "description": "Next.js middleware and route handler helpers for FloodGate rate limiter",
+  "license": "MIT",
+  "keywords": ["rate-limit", "rate-limiting", "nextjs", "next", "middleware", "redis", "floodgate", "throttle", "api", "edge"],
   "homepage": "https://github.com/premhagargi/floodgate#readme",
   "repository": { "type": "git", "url": "https://github.com/premhagargi/floodgate.git" },
   "engines": { "node": ">=20" },

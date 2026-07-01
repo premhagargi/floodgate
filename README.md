@@ -19,6 +19,12 @@ Production-grade distributed rate limiter for Node.js — atomic Lua scripts, Re
 
 ## Quick start
 
+```bash
+npm install floodgate-rl
+# With Redis support
+npm install floodgate-rl ioredis
+```
+
 ```ts
 import Redis from 'ioredis'
 import { createLimiter } from 'floodgate-rl'

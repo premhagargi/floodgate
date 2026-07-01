@@ -182,7 +182,7 @@ export default function OgImage() {
               fontWeight: 500,
             }}
           >
-            v0.1.0
+            v0.1.1
           </div>
         </div>
       </div>
