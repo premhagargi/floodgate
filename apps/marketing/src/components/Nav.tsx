@@ -2,13 +2,6 @@
 
 import { useEffect, useState } from 'react'
 
-const GateIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-    <path d="M3 12h18M3 6h18M3 18h18" stroke="#0EA5E9" strokeWidth="2.5" strokeLinecap="round" />
-    <rect x="8" y="4" width="8" height="16" rx="1" stroke="#8B5CF6" strokeWidth="2" />
-  </svg>
-)
-
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
 
@@ -29,12 +22,12 @@ export function Nav() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <GateIcon />
-          <span className="font-mono font-bold text-sm tracking-[0.18em] text-text-DEFAULT group-hover:text-brand-sky transition-colors">
-            FLOODGATE
+          <span className="flex items-center bg-editor-base rounded-lg px-3 py-1.5 group-hover:bg-slate-800 transition-colors">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/floodgate-logo.png" alt="FloodGate" className="h-6 w-auto" />
           </span>
           <span className="hidden sm:block text-[10px] font-mono px-1.5 py-0.5 rounded border border-wire text-text-muted">
-            v0.1.0
+            v0.1.1
           </span>
         </a>
 

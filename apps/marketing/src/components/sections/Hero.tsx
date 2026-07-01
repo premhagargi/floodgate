@@ -56,7 +56,7 @@ export function Hero() {
         >
           <span className="text-gradient-brand">Rate limiting</span>
           <br />
-          <span className="text-gradient-full">that holds the line.</span>
+          <span className="text-gradient-full">for Node.js.</span>
         </motion.h1>
 
         {/* Subtitle */}
