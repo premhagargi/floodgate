@@ -1,6 +1,0 @@
-[build]
-  publish = "apps/marketing/.next"
-  command = "npm --workspace floodgate-marketing run build"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
