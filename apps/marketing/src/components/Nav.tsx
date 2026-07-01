@@ -19,13 +19,11 @@ export function Nav() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <span className="flex items-center bg-editor-base rounded-lg px-4 py-1.5 group-hover:bg-slate-800 transition-colors">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/floodgate-logo.png" alt="FloodGate" className="h-12 w-auto" />
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/floodgate-logo.png" alt="FloodGate" className="h-[72px] w-auto" />
           <span className="hidden sm:block text-[10px] font-mono px-1.5 py-0.5 rounded border border-wire text-text-muted">
             v0.1.1
           </span>

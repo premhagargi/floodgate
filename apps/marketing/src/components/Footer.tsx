@@ -5,7 +5,8 @@ export function Footer() {
     <footer className="border-t border-wire bg-canvas-base">
       <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="font-mono font-bold text-sm tracking-[0.18em] text-text-DEFAULT">FLOODGATE</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/floodgate-logo.png" alt="FloodGate" className="h-8 w-auto" />
           <span className="text-text-muted text-xs">© {year} premhagargi · MIT</span>
         </div>
 
