@@ -1,5 +1,4 @@
-// TODO: switch to the custom domain (e.g. https://floodgate.dev) once it's purchased and pointed at this Vercel project.
-export const SITE_URL = 'https://floodgate-site.vercel.app'
+export const SITE_URL = 'https://floodgate.site'
 export const SITE_NAME = 'FloodGate'
 export const TITLE = 'FloodGate — Distributed Rate Limiting for Node.js'
 export const DESCRIPTION =
