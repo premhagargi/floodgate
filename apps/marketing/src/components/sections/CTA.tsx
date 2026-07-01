@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { GradientOrb } from '@/components/ui/GradientOrb'
 import { NpmCommand } from '@/components/ui/NpmCommand'
+import { NpmIcon } from '@/components/ui/Icons'
 
 export function CTA() {
   return (
@@ -51,7 +52,8 @@ export function CTA() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium bg-brand-sky text-white hover:bg-sky-500 transition-colors"
             >
-              npm ↗
+              <NpmIcon className="w-4 h-4" />
+              npm
             </a>
           </div>
         </motion.div>

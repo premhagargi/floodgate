@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { NpmIcon } from '@/components/ui/Icons'
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -48,7 +49,8 @@ export function Nav() {
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium bg-brand-sky text-white hover:bg-sky-500 transition-colors"
           >
-            npm ↗
+            <NpmIcon className="w-4 h-4" />
+            npm
           </a>
         </div>
       </div>
