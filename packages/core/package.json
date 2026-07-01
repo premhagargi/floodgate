@@ -1,6 +1,6 @@
 {
   "name": "floodgate-rl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Production-grade sliding-window rate limiter. Redis-backed, atomic, zero-approximation-error on burst detection.",
   "type": "module",
   "main": "./dist/index.cjs",
