@@ -33,6 +33,12 @@ export function Nav() {
         {/* Links */}
         <div className="flex items-center gap-1">
           <a
+            href="#contact"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md text-sm text-text-secondary hover:text-text-DEFAULT hover:bg-canvas-card transition-all duration-150"
+          >
+            Contact
+          </a>
+          <a
             href="https://github.com/premhagargi/floodgate"
             target="_blank"
             rel="noopener noreferrer"

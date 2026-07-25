@@ -12,6 +12,12 @@ export function Footer() {
 
         <nav className="flex items-center gap-6 text-sm text-text-secondary">
           <a
+            href="#contact"
+            className="hover:text-text-DEFAULT transition-colors"
+          >
+            Contact
+          </a>
+          <a
             href="https://github.com/premhagargi/floodgate"
             target="_blank"
             rel="noopener noreferrer"

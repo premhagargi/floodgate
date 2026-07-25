@@ -90,26 +90,27 @@ export function Architecture() {
           </div>
         </motion.div>
 
-        {/* Code callout */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-6 rounded-lg border border-editor-border bg-editor-base p-5 font-mono text-xs text-slate-300 leading-relaxed"
+          className="mt-6 rounded-lg border border-editor-border bg-editor-base p-5 font-mono text-xs text-slate-300 leading-relaxed overflow-x-auto"
         >
-          <span className="code-comment">{'// EVALSHA with automatic NOSCRIPT retry\n'}</span>
-          <span className="code-keyword">try </span>
-          <span className="code-default">{'{'} </span>
-          <span className="code-keyword">await </span>
-          <span className="code-fn">redis</span><span className="code-op">.</span><span className="code-fn">evalsha</span><span className="code-default">(sha, keys, args) {'}'}</span>
-          <span className="code-keyword"> catch </span>
-          <span className="code-default">{'{'}</span>{'\n'}
-          <span className="code-keyword">  if </span>
-          <span className="code-default">(err.message.</span><span className="code-fn">startsWith</span><span className="code-default">(</span><span className="code-string">'NOSCRIPT'</span><span className="code-default">)) {'{'}</span>{'\n'}
-          <span className="code-default">    </span><span className="code-keyword">const </span><span className="code-fn">sha</span><span className="code-default"> = </span><span className="code-keyword">await </span><span className="code-fn">redis</span><span className="code-op">.</span><span className="code-fn">script</span><span className="code-default">(</span><span className="code-string">'LOAD'</span><span className="code-default">, lua)   </span><span className="code-comment">{'// reload'}</span>{'\n'}
-          <span className="code-default">    </span><span className="code-keyword">return </span><span className="code-keyword">await </span><span className="code-fn">redis</span><span className="code-op">.</span><span className="code-fn">evalsha</span><span className="code-default">(sha, keys, args)  </span><span className="code-comment">{'// retry'}</span>{'\n'}
-          <span className="code-default">  {'}'}{'\n}'}</span>
+          <pre className="text-left font-mono">
+            <code>
+              <span className="code-comment">{'// EVALSHA with automatic NOSCRIPT retry\n'}</span>
+              <span className="code-keyword">try</span><span className="code-default"> {'{\n'}</span>
+              <span className="code-default">  </span><span className="code-keyword">await</span><span className="code-default"> </span><span className="code-fn">redis</span><span className="code-op">.</span><span className="code-fn">evalsha</span><span className="code-default">(sha, keys, args)</span>{'\n'}
+              <span className="code-default">{'}'} </span><span className="code-keyword">catch</span><span className="code-default"> (err: any) {'{\n'}</span>
+              <span className="code-keyword">  if</span><span className="code-default"> (err.message.</span><span className="code-fn">startsWith</span><span className="code-default">(</span><span className="code-string">&apos;NOSCRIPT&apos;</span><span className="code-default">)) {'{\n'}</span>
+              <span className="code-default">    </span><span className="code-keyword">const</span><span className="code-default"> sha = </span><span className="code-keyword">await</span><span className="code-default"> </span><span className="code-fn">redis</span><span className="code-op">.</span><span className="code-fn">script</span><span className="code-default">(</span><span className="code-string">&apos;LOAD&apos;</span><span className="code-default">, lua) </span><span className="code-comment">{'// reload\n'}</span>
+              <span className="code-default">    </span><span className="code-keyword">return</span><span className="code-default"> </span><span className="code-keyword">await</span><span className="code-default"> </span><span className="code-fn">redis</span><span className="code-op">.</span><span className="code-fn">evalsha</span><span className="code-default">(sha, keys, args) </span><span className="code-comment">{'// retry\n'}</span>
+              <span className="code-default">  {'}\n'}</span>
+              <span className="code-default">  </span><span className="code-keyword">throw</span><span className="code-default"> err</span>{'\n'}
+              <span className="code-default">{'}'}</span>
+            </code>
+          </pre>
         </motion.div>
       </div>
     </section>

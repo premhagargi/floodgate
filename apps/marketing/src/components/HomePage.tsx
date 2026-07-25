@@ -8,6 +8,7 @@ import { Features } from './sections/Features'
 import { Code } from './sections/Code'
 import { Architecture } from './sections/Architecture'
 import { CTA } from './sections/CTA'
+import { Contact } from './sections/Contact'
 import { Footer } from './Footer'
 
 export function HomePage() {
@@ -21,6 +22,7 @@ export function HomePage() {
       <Code />
       <Architecture />
       <CTA />
+      <Contact />
       <Footer />
     </>
   )
